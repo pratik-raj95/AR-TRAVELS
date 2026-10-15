@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #101B2D;
+  --color-navy-dark: #0B1320;
+  --color-navy-light: #1A2B47;
+  --color-ocean: #1769AA;
+  --color-ocean-dark: #125387;
+  --color-ocean-light: #2A82C7;
+  --color-turquoise: #22C7B8;
+  --color-turquoise-dark: #1AA89B;
+  --color-turquoise-light: #4DE0D3;
+  --color-ivory: #FAF8F3;
+  --color-ivory-warm: #F3EFE6;
+  --color-gold: #C5A059;
+  --color-gold-light: #E4C88A;
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+:root {
+  --color-navy: #101B2D;
+  --color-navy-dark: #0B1320;
+  --color-navy-light: #1A2B47;
+  --color-ocean: #1769AA;
+  --color-ocean-dark: #125387;
+  --color-ocean-light: #2A82C7;
+  --color-turquoise: #22C7B8;
+  --color-turquoise-dark: #1AA89B;
+  --color-turquoise-light: #4DE0D3;
+  --color-ivory: #FAF8F3;
+  --color-ivory-warm: #F3EFE6;
+  --color-gold: #C5A059;
+  --color-gold-light: #E4C88A;
+}
+
+html {
+  scroll-behavior: smooth;
+  color: #101B2D;
+  background-color: #FAF8F3;
+}
+
+body {
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  background-color: #FAF8F3;
+  color: #101B2D;
+  margin: 0;
+  padding: 0;
+}
+
+.font-serif {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+::selection {
+  background-color: #22C7B8;
+  color: #101B2D;
+}
+
+/* Glassmorphism and Card Aesthetics */
+.glass-panel-dark {
+  background: rgba(16, 27, 45, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Keyframe Animations */
+@keyframes subtleZoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-subtle-zoom {
+  animation: subtleZoom 25s ease-in-out infinite alternate;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.25s ease-out forwards;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F3;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Safe area padding for mobile bottom bar */
+.safe-area-pb {
+  padding-bottom: max(0.625rem, env(safe-area-inset-bottom));
+}
